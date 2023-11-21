@@ -26,5 +26,14 @@ fun Navigation() {
             }
             CategorizedLazyColumn(namesList)
         }
+        composable(route = Screen.SupportScreen.route) {
+            val namesList = names.map {
+                Category(
+                    name = it.key.toString(),
+                    items = it.value
+                )
+            }
+            SupportScreen(namesList)
+        }
     }
 }

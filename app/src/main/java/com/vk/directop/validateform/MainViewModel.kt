@@ -45,8 +45,20 @@ class MainViewModel(
                 state = state.copy(repeatedPassword = event.repeatedPassword)
             }
 
-            RegistrationFormEvent.Submit -> {
+            is RegistrationFormEvent.Submit -> {
                 submitDate()
+            }
+
+            RegistrationFormEvent.CategorizedList -> {
+                viewModelScope.launch {
+                    validationEventChannel.send(ValidationEvent.GoToCategorizedList)
+                }
+            }
+
+            RegistrationFormEvent.GoToSupportScreen -> {
+                viewModelScope.launch {
+                    validationEventChannel.send(ValidationEvent.GoToSupportScreen)
+                }
             }
         }
     }
@@ -79,7 +91,9 @@ class MainViewModel(
         }
     }
 
-    sealed class ValidationEvent{
-        object Success: ValidationEvent()
+    sealed class ValidationEvent {
+        object Success : ValidationEvent()
+        object GoToCategorizedList : ValidationEvent()
+        object GoToSupportScreen : ValidationEvent()
     }
 }

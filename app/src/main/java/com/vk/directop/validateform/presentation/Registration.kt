@@ -1,5 +1,6 @@
 package com.vk.directop.validateform.presentation
 
+import android.widget.HorizontalScrollView
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -47,9 +48,15 @@ fun Registration(
                         "Registration successful",
                         Toast.LENGTH_LONG
                     ).show()
-                    navController.navigate(
-                        Screen.LazyColumnScreen.route
-                    )
+                    navController.navigate(Screen.LazyColumnScreen.route)
+                }
+
+                MainViewModel.ValidationEvent.GoToCategorizedList -> {
+                    navController.navigate(Screen.LazyColumnScreen.route)
+                }
+
+                MainViewModel.ValidationEvent.GoToSupportScreen -> {
+                    navController.navigate(Screen.SupportScreen.route)
                 }
             }
         }
@@ -155,5 +162,28 @@ fun Registration(
         ) {
             Text(text = "Register")
         }
+        Spacer(modifier = Modifier.width(16.dp))
+        Text(text = "Special buttons")
+        Spacer(modifier = Modifier.width(8.dp))
+        Row(
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        ){
+            Button(
+                onClick = {
+                    viewModel.onEvent(RegistrationFormEvent.CategorizedList)
+                },
+            ) {
+                Text(text = "List with categories")
+            }
+            Spacer(modifier = Modifier.width(8.dp))
+            Button(
+                onClick = {
+                    viewModel.onEvent(RegistrationFormEvent.GoToSupportScreen)
+                },
+            ) {
+                Text(text = "Support Screen")
+            }
+        }
+
     }
 }
