@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ValidateForm</string>
+    <string name="title_support_screen">Title Support Screen</string>
 </resources>

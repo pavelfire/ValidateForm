@@ -1,7 +1,7 @@
 package com.vk.directop.validateform.presentation
 
-import android.widget.HorizontalScrollView
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -23,12 +23,15 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.vk.directop.validateform.MainViewModel
+import com.vk.directop.validateform.R
+import com.vk.directop.validateform.presentation.components.MyCheckbox
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -162,12 +165,12 @@ fun Registration(
         ) {
             Text(text = "Register")
         }
-        Spacer(modifier = Modifier.width(16.dp))
+        Spacer(modifier = Modifier.width(18.dp))
         Text(text = "Special buttons")
         Spacer(modifier = Modifier.width(8.dp))
         Row(
             modifier = Modifier.align(Alignment.CenterHorizontally)
-        ){
+        ) {
             Button(
                 onClick = {
                     viewModel.onEvent(RegistrationFormEvent.CategorizedList)
@@ -183,6 +186,23 @@ fun Registration(
             ) {
                 Text(text = "Support Screen")
             }
+        }
+        Spacer(modifier = Modifier.width(18.dp))
+        Row(
+            modifier = Modifier
+                .padding(top = 24.dp)
+                .fillMaxWidth()
+                .height(52.dp)
+                .background(MaterialTheme.colorScheme.primaryContainer),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Text(
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp),
+                text = stringResource(id = R.string.title_support_screen),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.primary
+            )
+            MyCheckbox()
         }
 
     }
