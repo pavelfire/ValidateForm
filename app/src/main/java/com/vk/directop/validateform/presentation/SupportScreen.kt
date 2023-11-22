@@ -12,6 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.vk.directop.validateform.data.Category
+import com.vk.directop.validateform.presentation.components.TrackItem
 
 @Composable
 fun SupportScreen(
@@ -28,5 +29,6 @@ fun SupportScreen(
                 .background(MaterialTheme.colorScheme.background)
                 .padding(16.dp)
         )
+        TrackItem()
     }
 }

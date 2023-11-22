@@ -12,9 +12,13 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
@@ -195,6 +199,7 @@ fun Registration(
                 .height(52.dp)
                 .background(MaterialTheme.colorScheme.primaryContainer),
             verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceAround
         ) {
             Text(
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp),
@@ -203,6 +208,10 @@ fun Registration(
                 color = MaterialTheme.colorScheme.primary
             )
             MyCheckbox()
+            IconButton(
+                onClick = { }) {
+                Icon(Icons.Default.MoreVert, null)
+            }
         }
 
     }
