@@ -30,5 +30,9 @@ fun SupportScreen(
                 .padding(16.dp)
         )
         TrackItem()
+        TrackItem(
+            artistName = "Frank Reyes",
+            trackName = "Mujer de las mil batallas"
+        )
     }
 }

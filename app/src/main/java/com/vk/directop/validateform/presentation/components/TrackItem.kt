@@ -23,7 +23,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun TrackItem() {
+fun TrackItem(
+    artistName: String = "Bebe Rexha",
+    trackName: String = "Fuck fake friends"
+) {
     Row(
         modifier = Modifier
             .padding(12.dp)
@@ -41,8 +44,8 @@ fun TrackItem() {
         Column(
             modifier = Modifier.padding(start = 12.dp)
         ) {
-            Text(text = "Fuck fake friends", fontSize = 16.sp)
-            Text(text = "Bebe Rexha", fontSize = 14.sp, color = Color(0x79000000))
+            Text(text = trackName, fontSize = 16.sp)
+            Text(text = artistName, fontSize = 14.sp, color = Color(0x79000000))
         }
         IconButton(onClick = { }) {
             Icon(Icons.Default.ThumbUp, null)

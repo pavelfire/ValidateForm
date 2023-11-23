@@ -60,6 +60,12 @@ class MainViewModel(
                     validationEventChannel.send(ValidationEvent.GoToSupportScreen)
                 }
             }
+
+            RegistrationFormEvent.GoToFibonacciScreen -> {
+                viewModelScope.launch {
+                    validationEventChannel.send(ValidationEvent.GoToFibonacciScreen)
+                }
+            }
         }
     }
 
@@ -95,5 +101,6 @@ class MainViewModel(
         object Success : ValidationEvent()
         object GoToCategorizedList : ValidationEvent()
         object GoToSupportScreen : ValidationEvent()
+        object GoToFibonacciScreen: ValidationEvent()
     }
 }

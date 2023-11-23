@@ -10,4 +10,5 @@ sealed class RegistrationFormEvent{
 
     object CategorizedList: RegistrationFormEvent()
     object GoToSupportScreen: RegistrationFormEvent()
+    object GoToFibonacciScreen: RegistrationFormEvent()
 }

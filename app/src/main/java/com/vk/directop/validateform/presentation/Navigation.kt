@@ -6,6 +6,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.vk.directop.validateform.data.Category
 import com.vk.directop.validateform.data.names
+import com.vk.directop.validateform.presentation.fibonacci.FibonacciScreen
 
 @Composable
 fun Navigation() {
@@ -34,6 +35,9 @@ fun Navigation() {
                 )
             }
             SupportScreen(namesList)
+        }
+        composable(route = Screen.FibonacciScreen.route){
+            FibonacciScreen()
         }
     }
 }

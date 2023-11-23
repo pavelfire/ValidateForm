@@ -4,6 +4,7 @@ sealed class Screen(val route: String) {
     object RegistrationScreen : Screen("registration_screen")
     object LazyColumnScreen : Screen("lazy_column_screen")
     object SupportScreen : Screen("support_screen")
+    object FibonacciScreen : Screen("fibonacci_screen")
 
     fun withArgs(vararg args: String): String {
         return buildString {

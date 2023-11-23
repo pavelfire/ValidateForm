@@ -11,6 +11,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
@@ -64,6 +66,10 @@ fun Registration(
 
                 MainViewModel.ValidationEvent.GoToSupportScreen -> {
                     navController.navigate(Screen.SupportScreen.route)
+                }
+
+                MainViewModel.ValidationEvent.GoToFibonacciScreen ->{
+                    navController.navigate(Screen.FibonacciScreen.route)
                 }
             }
         }
@@ -213,6 +219,49 @@ fun Registration(
                 Icon(Icons.Default.MoreVert, null)
             }
         }
-
+        Spacer(modifier = Modifier.height(18.dp))
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(3),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(4.dp),
+        ) {
+            item {
+                Button(
+                    onClick = {
+                        viewModel.onEvent(RegistrationFormEvent.CategorizedList)
+                    },
+                ) {
+                    Text(text = "List selectable")
+                }
+            }
+            item {
+                Button(
+                    onClick = {
+                        viewModel.onEvent(RegistrationFormEvent.GoToSupportScreen)
+                    },
+                ) {
+                    Text(text = "Support Screen")
+                }
+            }
+            item {
+                Button(
+                    onClick = {
+                        viewModel.onEvent(RegistrationFormEvent.CategorizedList)
+                    },
+                ) {
+                    Text(text = "With select")
+                }
+            }
+            item {
+                Button(
+                    onClick = {
+                        viewModel.onEvent(RegistrationFormEvent.GoToFibonacciScreen)
+                    },
+                ) {
+                    Text(text = "Fibonacci Screen")
+                }
+            }
+        }
     }
+
 }
