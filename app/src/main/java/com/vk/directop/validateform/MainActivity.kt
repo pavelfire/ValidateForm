@@ -9,21 +9,20 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.vk.directop.validateform.navigation.Navigation
 import com.vk.directop.validateform.ui.theme.ValidateFormTheme
-import com.vk.directop.validateform.utils.sharedPreferences
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
 
-    private var lastCalculated by sharedPreferences("lastCalculated")
+    //private var lastCalculated by sharedPreferences("lastCalculated")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         //println("Time from shared preferences ${timeFormatter(lastCalculated)}")
-        lastCalculated = System.currentTimeMillis().toString()
-        println("Time from shared preferences ${timeFormatter(lastCalculated)}")
+        //lastCalculated = System.currentTimeMillis().toString()
+        //println("Time from shared preferences ${timeFormatter(lastCalculated)}")
 
         setContent {
             ValidateFormTheme {
