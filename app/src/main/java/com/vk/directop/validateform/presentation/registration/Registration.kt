@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.vk.directop.validateform.R
-import com.vk.directop.validateform.presentation.Screen
+import com.vk.directop.validateform.navigation.Screen
 import com.vk.directop.validateform.presentation.components.MyCheckbox
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -70,6 +70,10 @@ fun Registration(
 
                 RegistrationViewModel.ValidationEvent.GoToFibonacciScreen ->{
                     navController.navigate(Screen.FibonacciScreen.route)
+                }
+
+                RegistrationViewModel.ValidationEvent.GoToShowImageScreen ->{
+                    navController.navigate(Screen.ShowImageScreen.route)
                 }
             }
         }
@@ -246,10 +250,10 @@ fun Registration(
             item {
                 Button(
                     onClick = {
-                        viewModel.onEvent(RegistrationFormEvent.CategorizedList)
+                        viewModel.onEvent(RegistrationFormEvent.GoToShowImageScreen)
                     },
                 ) {
-                    Text(text = "With select")
+                    Text(text = "Show Image")
                 }
             }
             item {

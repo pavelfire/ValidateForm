@@ -7,11 +7,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.vk.directop.validateform.presentation.Navigation
+import com.vk.directop.validateform.navigation.Navigation
 import com.vk.directop.validateform.ui.theme.ValidateFormTheme
 import com.vk.directop.validateform.utils.sharedPreferences
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.Locale
 
 class MainActivity : ComponentActivity() {
 
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        println("Time from shared preferences ${timeFormatter(lastCalculated)}")
+        //println("Time from shared preferences ${timeFormatter(lastCalculated)}")
         lastCalculated = System.currentTimeMillis().toString()
         println("Time from shared preferences ${timeFormatter(lastCalculated)}")
 
@@ -39,7 +40,7 @@ class MainActivity : ComponentActivity() {
 
 fun timeFormatter(millis: String): String {
     return try {
-        SimpleDateFormat("dd/MM/yyyy HH:mm").format(Date(millis.toLong()))
+        SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.US).format(Date(millis.toLong()))
     }catch (e: Exception){
         "first start of app"
     }
