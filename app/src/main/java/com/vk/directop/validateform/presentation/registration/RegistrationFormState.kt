@@ -1,4 +1,4 @@
-package com.vk.directop.validateform.presentation
+package com.vk.directop.validateform.presentation.registration
 
 data class RegistrationFormState(
     val email: String = "",

@@ -1,4 +1,4 @@
-package com.vk.directop.validateform.presentation
+package com.vk.directop.validateform.presentation.categorized_lazy
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package com.vk.directop.validateform.presentation
+package com.vk.directop.validateform.presentation.registration
 
 sealed class RegistrationFormEvent{
     data class EmailChanged(val email: String) : RegistrationFormEvent()

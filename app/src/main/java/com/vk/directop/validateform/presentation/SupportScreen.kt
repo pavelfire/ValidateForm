@@ -34,5 +34,9 @@ fun SupportScreen(
             artistName = "Frank Reyes",
             trackName = "Mujer de las mil batallas"
         )
+        TrackItem(
+            artistName = "Romeo Santos",
+            trackName = "Eres mia"
+        )
     }
 }

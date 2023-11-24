@@ -32,21 +32,24 @@ fun TrackItem(
             .padding(12.dp)
             .fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.SpaceAround
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Image(
-            modifier = Modifier
-                .size(56.dp)
-                .clip(RoundedCornerShape(8.dp)),
-            imageVector = Icons.Default.AccountCircle,
-            contentDescription = "avatar"
-        )
-        Column(
-            modifier = Modifier.padding(start = 12.dp)
-        ) {
-            Text(text = trackName, fontSize = 16.sp)
-            Text(text = artistName, fontSize = 14.sp, color = Color(0x79000000))
+        Row {
+            Image(
+                modifier = Modifier
+                    .size(56.dp)
+                    .clip(RoundedCornerShape(8.dp)),
+                imageVector = Icons.Default.AccountCircle,
+                contentDescription = "avatar"
+            )
+            Column(
+                modifier = Modifier.padding(start = 12.dp)
+            ) {
+                Text(text = trackName, fontSize = 16.sp)
+                Text(text = artistName, fontSize = 14.sp, color = Color(0x79000000))
+            }
         }
+
         IconButton(onClick = { }) {
             Icon(Icons.Default.ThumbUp, null)
         }

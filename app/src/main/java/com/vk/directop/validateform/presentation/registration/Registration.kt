@@ -1,4 +1,4 @@
-package com.vk.directop.validateform.presentation
+package com.vk.directop.validateform.presentation.registration
 
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -35,8 +35,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import com.vk.directop.validateform.MainViewModel
 import com.vk.directop.validateform.R
+import com.vk.directop.validateform.presentation.Screen
 import com.vk.directop.validateform.presentation.components.MyCheckbox
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -45,13 +45,13 @@ fun Registration(
     navController: NavController
 ) {
 
-    val viewModel = viewModel<MainViewModel>()
+    val viewModel = viewModel<RegistrationViewModel>()
     val state = viewModel.state
     val context = LocalContext.current
     LaunchedEffect(key1 = context) {
         viewModel.validationEvents.collect { event ->
             when (event) {
-                MainViewModel.ValidationEvent.Success -> {
+                RegistrationViewModel.ValidationEvent.Success -> {
                     Toast.makeText(
                         context,
                         "Registration successful",
@@ -60,15 +60,15 @@ fun Registration(
                     navController.navigate(Screen.LazyColumnScreen.route)
                 }
 
-                MainViewModel.ValidationEvent.GoToCategorizedList -> {
+                RegistrationViewModel.ValidationEvent.GoToCategorizedList -> {
                     navController.navigate(Screen.LazyColumnScreen.route)
                 }
 
-                MainViewModel.ValidationEvent.GoToSupportScreen -> {
+                RegistrationViewModel.ValidationEvent.GoToSupportScreen -> {
                     navController.navigate(Screen.SupportScreen.route)
                 }
 
-                MainViewModel.ValidationEvent.GoToFibonacciScreen ->{
+                RegistrationViewModel.ValidationEvent.GoToFibonacciScreen ->{
                     navController.navigate(Screen.FibonacciScreen.route)
                 }
             }

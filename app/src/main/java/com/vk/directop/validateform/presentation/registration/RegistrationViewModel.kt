@@ -1,4 +1,4 @@
-package com.vk.directop.validateform
+package com.vk.directop.validateform.presentation.registration
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -9,13 +9,11 @@ import com.vk.directop.validateform.domain.use_case.ValidateEmail
 import com.vk.directop.validateform.domain.use_case.ValidatePassword
 import com.vk.directop.validateform.domain.use_case.ValidateRepeatedPassword
 import com.vk.directop.validateform.domain.use_case.ValidateTerms
-import com.vk.directop.validateform.presentation.RegistrationFormEvent
-import com.vk.directop.validateform.presentation.RegistrationFormState
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-class MainViewModel(
+class RegistrationViewModel(
     private val validateEmail: ValidateEmail = ValidateEmail(),
     private val validatePassword: ValidatePassword = ValidatePassword(),
     private val validateRepeatedPassword: ValidateRepeatedPassword = ValidateRepeatedPassword(),
