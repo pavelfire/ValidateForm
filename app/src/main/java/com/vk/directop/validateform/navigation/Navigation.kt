@@ -10,6 +10,7 @@ import com.vk.directop.validateform.presentation.SupportScreen
 import com.vk.directop.validateform.presentation.categorized_lazy.CategorizedLazyColumn
 import com.vk.directop.validateform.presentation.fibonacci.FibonacciScreen
 import com.vk.directop.validateform.presentation.image_coil.ShowImage
+import com.vk.directop.validateform.presentation.main_screen.MainScreen
 import com.vk.directop.validateform.presentation.registration.Registration
 
 @Composable
@@ -45,6 +46,9 @@ fun Navigation() {
         }
         composable(route = Screen.ShowImageScreen.route){
             ShowImage()
+        }
+        composable(route = Screen.MainScreen.route){
+            MainScreen()
         }
     }
 }

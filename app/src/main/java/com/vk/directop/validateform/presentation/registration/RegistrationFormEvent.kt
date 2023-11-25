@@ -12,4 +12,5 @@ sealed class RegistrationFormEvent{
     object GoToSupportScreen: RegistrationFormEvent()
     object GoToFibonacciScreen: RegistrationFormEvent()
     object GoToShowImageScreen: RegistrationFormEvent()
+    object GoToMainScreen: RegistrationFormEvent()
 }

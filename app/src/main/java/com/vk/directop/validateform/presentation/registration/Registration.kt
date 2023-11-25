@@ -37,6 +37,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.vk.directop.validateform.R
 import com.vk.directop.validateform.navigation.Screen
+import com.vk.directop.validateform.presentation.components.MyBottomAppBar
 import com.vk.directop.validateform.presentation.components.MyCheckbox
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -74,6 +75,10 @@ fun Registration(
 
                 RegistrationViewModel.ValidationEvent.GoToShowImageScreen ->{
                     navController.navigate(Screen.ShowImageScreen.route)
+                }
+
+                RegistrationViewModel.ValidationEvent.GoToMainScreen ->{
+                    navController.navigate(Screen.MainScreen.route)
                 }
             }
         }
@@ -265,7 +270,17 @@ fun Registration(
                     Text(text = "Fibonacci Screen")
                 }
             }
+            item {
+                Button(
+                    onClick = {
+                        viewModel.onEvent(RegistrationFormEvent.GoToMainScreen)
+                    },
+                ) {
+                    Text(text = "Main Screen")
+                }
+            }
         }
+        MyBottomAppBar()
     }
 
 }

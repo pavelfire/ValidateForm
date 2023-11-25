@@ -70,6 +70,13 @@ class RegistrationViewModel(
                     validationEventChannel.send(ValidationEvent.GoToShowImageScreen)
                 }
             }
+
+            RegistrationFormEvent.GoToMainScreen ->{
+                viewModelScope.launch {
+                    validationEventChannel.send(ValidationEvent.GoToMainScreen)
+                }
+            }
+
         }
     }
 
@@ -107,5 +114,6 @@ class RegistrationViewModel(
         object GoToSupportScreen : ValidationEvent()
         object GoToFibonacciScreen: ValidationEvent()
         object GoToShowImageScreen: ValidationEvent()
+        object GoToMainScreen: ValidationEvent()
     }
 }
