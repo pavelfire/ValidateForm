@@ -31,3 +31,7 @@ class App : Application(), ImageLoaderFactory {
             .build()
     }
 }
+
+
+// LazyColumnScrollbar
+// https://github.com/nanihadesuka/LazyColumnScrollbar

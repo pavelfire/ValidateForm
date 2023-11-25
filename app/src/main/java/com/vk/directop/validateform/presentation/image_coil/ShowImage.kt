@@ -34,6 +34,7 @@ import coil.imageLoader
 import coil.memory.MemoryCache
 import com.vk.directop.validateform.presentation.components.ColorBox
 import com.vk.directop.validateform.presentation.components.SpringLike
+import com.vk.directop.validateform.presentation.components.UserPic
 
 const val imageUrl =
     "https://ru.ml-vehicle.com/Content/uploads/2023931296/20230523153749d5d15dedfa0d44df9e77e9425d71a4c9.png"
@@ -132,6 +133,8 @@ fun ShowImage(
             }
             SpringLike()
             ColorBox()
+            UserPic()
+            UserPic()
 
         }
         SubcomposeAsyncImage(
