@@ -1,9 +1,11 @@
 package com.vk.directop.validateform.presentation.main_screen
 
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import coil.annotation.ExperimentalCoilApi
 import com.vk.directop.validateform.presentation.components.BottomNavBarWithBadges
+import com.vk.directop.validateform.presentation.components.ImageBorderAnimation
 
 const val imageUrl =
     "https://ru.ml-vehicle.com/Content/uploads/2023931296/20230523153749d5d15dedfa0d44df9e77e9425d71a4c9.png"
@@ -17,5 +19,4 @@ fun MainScreen(
 
 ) {
     BottomNavBarWithBadges()
-
 }

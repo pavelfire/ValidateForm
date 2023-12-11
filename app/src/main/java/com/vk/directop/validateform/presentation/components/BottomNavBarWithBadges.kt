@@ -61,6 +61,9 @@ fun BottomNavBarWithBadges(
     )
     var selectedItemIndex by rememberSaveable { mutableIntStateOf(0) }
     Scaffold(
+        content = {
+            ImageBorderAnimation()
+        },
         bottomBar = {
             NavigationBar {
                 myItems.forEachIndexed { index, item ->
@@ -101,7 +104,5 @@ fun BottomNavBarWithBadges(
             }
         }
 
-    ) {
-
-    }
+    )
 }
