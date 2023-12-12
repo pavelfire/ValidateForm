@@ -11,6 +11,8 @@ import coil.util.DebugLogger
 class App : Application(), ImageLoaderFactory {
 
 
+   // val container: Any  // container for return bookRepository
+
     override fun newImageLoader(): ImageLoader {
         return ImageLoader(this).newBuilder()
             .memoryCachePolicy(CachePolicy.ENABLED)

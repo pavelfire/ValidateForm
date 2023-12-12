@@ -1,6 +1,8 @@
 package com.vk.directop.validateform.presentation.components
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
@@ -22,6 +24,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class BottomNavigationItem(
@@ -62,7 +65,13 @@ fun BottomNavBarWithBadges(
     var selectedItemIndex by rememberSaveable { mutableIntStateOf(0) }
     Scaffold(
         content = {
-            ImageBorderAnimation()
+            Column(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                ImageBorderAnimation()
+                AnimatedCircles2()
+            }
+
         },
         bottomBar = {
             NavigationBar {
