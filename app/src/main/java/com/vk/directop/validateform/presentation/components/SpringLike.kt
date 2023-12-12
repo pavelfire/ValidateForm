@@ -19,7 +19,7 @@ import androidx.compose.ui.draw.scale
 @Composable
 fun SpringLike(
     isLiked: Boolean = false,
-    //onClick: () -> Unit
+    onClick: () -> Unit
 ) {
     var filledLikeSize by remember { mutableStateOf(0f) }
     var showEmptyLike by remember { mutableStateOf(true) }

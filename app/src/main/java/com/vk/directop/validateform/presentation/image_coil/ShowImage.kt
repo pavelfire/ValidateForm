@@ -20,6 +20,10 @@ import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -47,6 +51,7 @@ fun ShowImage(
 
 ) {
     val context = LocalContext.current
+    var forLike by remember { mutableStateOf(true) }
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -130,7 +135,13 @@ fun ShowImage(
                 }) {
                 Text(text = "Remove from cache blue car")
             }
-            SpringLike()
+            SpringLike(onClick = {  }, isLiked = forLike)
+            Button(modifier = Modifier.align(Alignment.CenterVertically),
+                onClick = {
+                    forLike = !forLike
+                }) {
+                Text(text = "Like")
+            }
             ColorBox()
             UserPic()
             UserPic()
