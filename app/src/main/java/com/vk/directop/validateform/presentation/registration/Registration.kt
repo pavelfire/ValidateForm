@@ -80,6 +80,10 @@ fun Registration(
                 RegistrationViewModel.ValidationEvent.GoToMainScreen ->{
                     navController.navigate(Screen.MainScreen.route)
                 }
+
+                RegistrationViewModel.ValidationEvent.GoToBooksScreen ->{
+                    navController.navigate(Screen.BooksScreen.route)
+                }
             }
         }
     }
@@ -277,6 +281,15 @@ fun Registration(
                     },
                 ) {
                     Text(text = "Main Screen")
+                }
+            }
+            item {
+                Button(
+                    onClick = {
+                        viewModel.onEvent(RegistrationFormEvent.GoToBooksScreen)
+                    },
+                ) {
+                    Text(text = "Books Screen")
                 }
             }
         }

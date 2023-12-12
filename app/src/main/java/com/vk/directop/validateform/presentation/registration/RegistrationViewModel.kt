@@ -77,6 +77,12 @@ class RegistrationViewModel(
                 }
             }
 
+            RegistrationFormEvent.GoToBooksScreen ->{
+                viewModelScope.launch {
+                    validationEventChannel.send(ValidationEvent.GoToBooksScreen)
+                }
+            }
+
         }
     }
 
@@ -115,5 +121,6 @@ class RegistrationViewModel(
         object GoToFibonacciScreen: ValidationEvent()
         object GoToShowImageScreen: ValidationEvent()
         object GoToMainScreen: ValidationEvent()
+        object GoToBooksScreen: ValidationEvent()
     }
 }

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">ValidateForm</string>
     <string name="title_support_screen">Title Support Screen</string>
+    <string name="loading">Loading</string>
+    <string name="loading_failed">Loading faled</string>
+    <string name="retry">Retry</string>
+    <string name="content_description">Content description</string>
+    <string name="book_title">Here can be downloadabale content, need to configurate Repository</string>
 </resources>

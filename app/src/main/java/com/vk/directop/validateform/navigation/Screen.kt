@@ -7,6 +7,7 @@ sealed class Screen(val route: String) {
     object FibonacciScreen : Screen("fibonacci_screen")
     object ShowImageScreen : Screen("show_image_screen")
     object MainScreen : Screen("main_screen")
+    object BooksScreen : Screen("books_screen")
 
     fun withArgs(vararg args: String): String {
         return buildString {

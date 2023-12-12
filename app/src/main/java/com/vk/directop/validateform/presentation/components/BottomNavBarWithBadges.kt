@@ -1,8 +1,11 @@
 package com.vk.directop.validateform.presentation.components
 
 import android.annotation.SuppressLint
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Home
@@ -21,10 +24,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class BottomNavigationItem(
@@ -68,8 +71,31 @@ fun BottomNavBarWithBadges(
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
-                ImageBorderAnimation()
-                AnimatedCircles2()
+                Box(
+                    modifier = Modifier
+                        .background(Color.Red)
+                        .fillMaxWidth()
+                        .weight(1f)
+                )
+                Box(
+                    modifier = Modifier
+                        .background(Color.Yellow)
+                        .fillMaxWidth()
+                        .weight(3f)
+                ) {
+                    ImageBorderAnimation()
+
+                }
+                Box(
+                    modifier = Modifier
+                        .background(Color.Green)
+                        .fillMaxWidth()
+                        .weight(2f)
+                ) {
+                    AnimatedCircles2()
+                }
+
+
             }
 
         },
@@ -83,18 +109,18 @@ fun BottomNavBarWithBadges(
                             // navController.navigate(item.title)
                         },
                         label = {
-                                Text(text = item.title)
+                            Text(text = item.title)
                         },
                         alwaysShowLabel = false,
                         icon = {
                             BadgedBox(
                                 badge = {
-                                    if (item.badgeCount != null){
-                                        Badge{
+                                    if (item.badgeCount != null) {
+                                        Badge {
                                             Text(text = item.badgeCount.toString())
                                         }
-                                    }else if (item.hasNews){
-                                            Badge()
+                                    } else if (item.hasNews) {
+                                        Badge()
                                     }
                                 }
                             ) {
