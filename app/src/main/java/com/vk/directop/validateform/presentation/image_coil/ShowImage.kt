@@ -128,14 +128,13 @@ fun ShowImage(
             )
             Spacer(modifier = Modifier.width(16.dp))
             Button(modifier = Modifier.align(Alignment.CenterVertically),
-                onClick = {
-                    // remove by key
+                onClick = { // remove by key
                     context.imageLoader.diskCache?.remove(imageUrl)
                     context.imageLoader.memoryCache?.remove(MemoryCache.Key(imageUrl))
                 }) {
                 Text(text = "Remove from cache blue car")
             }
-            SpringLike(onClick = {  }, isLiked = forLike)
+            SpringLike(onClick = { }, isLiked = forLike)
             Button(modifier = Modifier.align(Alignment.CenterVertically),
                 onClick = {
                     forLike = !forLike
