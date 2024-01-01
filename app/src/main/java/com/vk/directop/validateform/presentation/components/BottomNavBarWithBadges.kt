@@ -92,12 +92,14 @@ fun BottomNavBarWithBadges(
                         .fillMaxWidth()
                         .weight(2f)
                 ) {
-                    AnimatedCircles2()
+                    Column {
+                        AnimatedCircles2()
+                        ButtonSample()
+                        SwitchWithCustomColors()
+                    }
+
                 }
-
-
             }
-
         },
         bottomBar = {
             NavigationBar {

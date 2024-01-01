@@ -6,4 +6,5 @@
     <string name="retry">Retry</string>
     <string name="content_description">Content description</string>
     <string name="book_title">Here can be downloadabale content, need to configurate Repository</string>
+    <string name="favourite">favorite</string>
 </resources>
